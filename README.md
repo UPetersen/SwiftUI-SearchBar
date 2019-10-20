@@ -11,4 +11,4 @@ The search bar incorporates
 - hiding the navigation view when the search text field is selected.
 
 
-https://github.com/UPetersen/SwiftUI-SearchBar/edit/master/Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif
+[In action](https://github.com/UPetersen/SwiftUI-SearchBar/edit/master/Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif)
