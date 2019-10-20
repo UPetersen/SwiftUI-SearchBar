@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60A7EC3235CB78C0082535C /* Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif in Resources */ = {isa = PBXBuildFile; fileRef = C60A7EC2235CB78C0082535C /* Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif */; };
 		C649F0442351F99000E23D98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C649F0432351F99000E23D98 /* AppDelegate.swift */; };
 		C649F0462351F99000E23D98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C649F0452351F99000E23D98 /* SceneDelegate.swift */; };
 		C649F0482351F99000E23D98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C649F0472351F99000E23D98 /* ContentView.swift */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C60A7EC1235CB6210082535C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C60A7EC2235CB78C0082535C /* Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif"; sourceTree = "<group>"; };
 		C649F0402351F99000E23D98 /* SearchBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C649F0432351F99000E23D98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C649F0452351F99000E23D98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +62,9 @@
 				C649F0432351F99000E23D98 /* AppDelegate.swift */,
 				C649F0452351F99000E23D98 /* SceneDelegate.swift */,
 				C649F0472351F99000E23D98 /* ContentView.swift */,
+				C60A7EC1235CB6210082535C /* README.md */,
 				C649F0492351F99500E23D98 /* Assets.xcassets */,
+				C60A7EC2235CB78C0082535C /* Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif */,
 				C649F04E2351F99500E23D98 /* LaunchScreen.storyboard */,
 				C649F0512351F99500E23D98 /* Info.plist */,
 				C649F04B2351F99500E23D98 /* Preview Content */,
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C649F0502351F99500E23D98 /* LaunchScreen.storyboard in Resources */,
+				C60A7EC3235CB78C0082535C /* Bildschirmvideo aufnehmen 2019-10-19 um 21.19.55_55.gif in Resources */,
 				C649F04D2351F99500E23D98 /* Preview Assets.xcassets in Resources */,
 				C649F04A2351F99500E23D98 /* Assets.xcassets in Resources */,
 			);
