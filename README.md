@@ -1,10 +1,10 @@
 #  SwiftUI searchBar
 
-Sample swiftUI project for a search bar realized completely in swiftUI used to answer [this stackoverflow question](https://stackoverflow.com/questions/56490963/how-to-display-a-search-bar-with-swiftui/58473985#58473985)
+Sample swiftUI project for a search bar realized completely in swiftUI used as [answer](https://stackoverflow.com/questions/56490963/how-to-display-a-search-bar-with-swiftui/58473985#58473985) to [this stackoverflow question](https://stackoverflow.com/questions/56490963/how-to-display-a-search-bar-with-swiftui)
 
 The search bar incorporates 
 
-- the magnifying glas,
+- a magnifying glas icon,
 - a clear button,
 - a cancel button,
 - resigning keyboard on dragging in the list and
