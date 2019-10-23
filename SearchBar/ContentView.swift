@@ -24,7 +24,7 @@ struct ContentView: View {
                         
                         ZStack (alignment: .leading) {
                             if searchText.isEmpty { // separate text to give it the proper color
-                                Text("search").foregroundColor(.secondary)
+                                Text("Search")
                             }
                             TextField("", text: $searchText, onEditingChanged: { isEditing in
                                 self.showCancelButton = true
@@ -40,8 +40,8 @@ struct ContentView: View {
                         }
                     }
                     .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
-                    .foregroundColor(.secondary)
-                    .background(Color(.secondarySystemBackground))
+                    .foregroundColor(.secondary) // For magnifying glass and placeholder test
+                    .background(Color(.tertiarySystemFill))
                     .cornerRadius(10.0)
                     
                     if showCancelButton  {
