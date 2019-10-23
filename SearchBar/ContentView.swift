@@ -22,12 +22,17 @@ struct ContentView: View {
                     HStack {
                         Image(systemName: "magnifyingglass")
                         
-                        TextField("search", text: $searchText, onEditingChanged: { isEditing in
-                            self.showCancelButton = true
-                        }, onCommit: {
-                            print("onCommit")
-                        }).foregroundColor(.primary)
-                        
+                        ZStack (alignment: .leading) {
+                            if searchText.isEmpty { // separate text to give it the proper color
+                                Text("search").foregroundColor(.secondary)
+                            }
+                            TextField("", text: $searchText, onEditingChanged: { isEditing in
+                                self.showCancelButton = true
+                            }, onCommit: {
+                                print("onCommit")
+                            }).foregroundColor(.primary)
+                        }
+
                         Button(action: {
                             self.searchText = ""
                         }) {
