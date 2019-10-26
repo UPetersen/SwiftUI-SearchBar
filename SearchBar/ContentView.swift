@@ -19,7 +19,7 @@ struct ContentView: View {
             VStack {
                 
                 // Search view
-                SearchBarView(searchText: $searchText) // .animation(.default) // animation does not work properly
+                SearchBarView(searchText: $searchText)
                 
                 List {
                     // Filtered list of names
@@ -71,6 +71,7 @@ extension View {
         modifier(ResignKeyboardOnDragGesture())
     }
 }
+
 
 struct SearchBarView: View {
     
