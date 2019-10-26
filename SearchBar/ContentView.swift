@@ -10,52 +10,17 @@ import SwiftUI
 
 struct ContentView: View {
     let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]
+    
     @State private var searchText = ""
-    @State private var showCancelButton: Bool = false
     
     var body: some View {
         
         NavigationView {
             VStack {
+                
                 // Search view
-                HStack {
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        
-                        ZStack (alignment: .leading) {
-                            if searchText.isEmpty { // separate text to give it the proper color
-                                Text("Search")
-                            }
-                            TextField("", text: $searchText, onEditingChanged: { isEditing in
-                                self.showCancelButton = true
-                            }, onCommit: {
-                                print("onCommit")
-                            }).foregroundColor(.primary)
-                        }
-
-                        Button(action: {
-                            self.searchText = ""
-                        }) {
-                            Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
-                        }
-                    }
-                    .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
-                    .foregroundColor(.secondary) // For magnifying glass and placeholder test
-                    .background(Color(.tertiarySystemFill))
-                    .cornerRadius(10.0)
-                    
-                    if showCancelButton  {
-                        Button("Cancel") {
-                                UIApplication.shared.endEditing(true) // this must be placed before the other commands here
-                                self.searchText = ""
-                                self.showCancelButton = false
-                        }
-                        .foregroundColor(Color(.systemBlue))
-                    }
-                }
-                .padding(.horizontal)
-                .navigationBarHidden(showCancelButton) // .animation(.default) // animation does not work properly
-
+                SearchBarView(searchText: $searchText) // .animation(.default) // animation does not work properly
+                
                 List {
                     // Filtered list of names
                     ForEach(array.filter{$0.hasPrefix(searchText) || searchText == ""}, id:\.self) {
@@ -74,11 +39,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-           ContentView()
-              .environment(\.colorScheme, .light)
-
-           ContentView()
-              .environment(\.colorScheme, .dark)
+            ContentView()
+                .environment(\.colorScheme, .light)
+            
+            ContentView()
+                .environment(\.colorScheme, .dark)
         }
     }
 }
@@ -104,5 +69,52 @@ struct ResignKeyboardOnDragGesture: ViewModifier {
 extension View {
     func resignKeyboardOnDragGesture() -> some View {
         modifier(ResignKeyboardOnDragGesture())
+    }
+}
+
+struct SearchBarView: View {
+    
+    @Binding var searchText: String
+    @State private var showCancelButton: Bool = false
+    @State private var onCommit: () -> () = {print("onCommit")}
+    
+    var body: some View {
+        HStack {
+            HStack {
+                Image(systemName: "magnifyingglass")
+                
+                // Search text field
+                ZStack (alignment: .leading) {
+                    if searchText.isEmpty { // Separate text for placeholder to give it the proper color
+                        Text("Search")
+                    }
+                    TextField("", text: $searchText, onEditingChanged: { isEditing in
+                        self.showCancelButton = true
+                    }, onCommit: onCommit).foregroundColor(.primary)
+                }
+                // Clear button
+                Button(action: {
+                    self.searchText = ""
+                }) {
+                    Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
+                }
+            }
+            .padding(EdgeInsets(top: 8, leading: 6, bottom: 8, trailing: 6))
+            .foregroundColor(.secondary) // For magnifying glass and placeholder test
+            .background(Color(.tertiarySystemFill))
+            .cornerRadius(10.0)
+            
+            if showCancelButton  {
+                // Cancel button
+                Button("Cancel") {
+                    UIApplication.shared.endEditing(true) // this must be placed before the other commands here
+                    self.searchText = ""
+                    self.showCancelButton = false
+                }
+                .foregroundColor(Color(.systemBlue))
+            }
+        }
+        .padding(.horizontal)
+        .navigationBarHidden(showCancelButton)
     }
 }
