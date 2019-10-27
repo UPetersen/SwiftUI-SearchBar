@@ -77,7 +77,7 @@ struct SearchBarView: View {
     
     @Binding var searchText: String
     @State private var showCancelButton: Bool = false
-    @State private var onCommit: () -> () = {print("onCommit")}
+    var onCommit: () ->Void = {print("onCommit")}
     
     var body: some View {
         HStack {
